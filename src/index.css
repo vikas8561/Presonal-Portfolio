@@ -73,16 +73,22 @@ header p {
 
 /* Section Titles */
 .about, .skills, .education, .projects {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .about h2,
 .skills h2,
 .education h2,
-.project {
-  font-size: 2.5rem;
+.project,
+.contact {
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #ff7f50;
+  color: #430479;
+}
+
+.about p {
+  color: black;
+  font-weight: 500;
 }
 
 /* Skills Section */
@@ -161,7 +167,7 @@ header p {
 footer {
   text-align: center;
   margin-top: 3rem;
-  color: #94a3b8;
+  color: black;
 }
 
 /* Fixed Navbar Styling */
@@ -333,3 +339,13 @@ footer {
     padding: 1rem;
   }
 }
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  margin-bottom: 1rem;
+}
+
