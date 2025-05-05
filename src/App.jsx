@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Github, Linkedin, Mail } from "lucide-react";
-
+import { motion } from "framer-motion";
 const projects = [
-  {
-    title: "Portfolio Website",
-    description: "A personal Portfolio website to showcase my work and skills.",
-    link: "https://github.com/vikas8561/Presonal-Portfolio",
-  },
   {
     title: "Zeesh (restaurant reservation)",
     description: "An online shopping platform built with MERN stack.",
@@ -39,12 +34,12 @@ const education = [
   {
     degree: "B.tech in Computer Science",
     institution: "Poornima College Of Engineering",
-    year: "2023",
+    year: "2019-2023",
   },
   {
-    degree: "Full-Stack Web Development Bootcamp",
+    degree: "Software Development",
     institution: "Masai School",
-    year: "2025",
+    year: "2024-2025",
   },
 ];
 
@@ -64,54 +59,66 @@ const App = () => {
         </div>
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
           <li>
-            <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#about" onClick={() => setMenuOpen(false)}>
+              About
+            </a>
           </li>
           <li>
-            <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+            <a href="#skills" onClick={() => setMenuOpen(false)}>
+              Skills
+            </a>
           </li>
           <li>
-            <a href="#education" onClick={() => setMenuOpen(false)}>Education</a>
+            <a href="#education" onClick={() => setMenuOpen(false)}>
+              Education
+            </a>
           </li>
           <li>
-            <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+            <a href="#projects" onClick={() => setMenuOpen(false)}>
+              Projects
+            </a>
           </li>
           <li>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/vikas8561/Resume/blob/main/Resume.pdf.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+            >
+              Resume
+            </a>
           </li>
         </ul>
       </div>
 
       <div className="container">
         <header>
-          <h1>Hi, I'm Vikas Kumar</h1>
+          <img src="/vikas.jpg" alt="Vikas Kumar" className="profile-pic" />
+          <motion.h1
+            initial={{ x: "-100vw", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 12,
+              damping: 12,
+              duration: 2,
+            }}
+            style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#333" }}
+          >
+            Hi, I'm Vikas Kumar
+          </motion.h1>
           <section className="about" id="about">
             <h2>About Me</h2>
             <p>
-              I'm a passionate Full-Stack Developer with experience in building
-              scalable web applications. I love working with the latest
-              technologies and learning new concepts to improve my skills.
+            I am a software developer with a growing passion for web development and hands-on experience in the MERN stack (MongoDB, Express.js, React, Node.js). I’ve also worked with Angular and .NET Core, building and learning through projects that have helped me strengthen my understanding of both front-end and back-end development. 
+            I’m eager to grow, learn from seasoned professionals, and contribute to meaningful projects. I enjoy tackling challenges, improving my coding skills, and building applications that make a difference.
             </p>
           </section>
-          <p>Full-Stack Developer | React | Node.js</p>
-          <div className="socials" id="contact">
-            <a
-              href="https://github.com/vikas8561"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github /> GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/vikas-kumar-2304a92a3/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin /> LinkedIn
-            </a>
-            <a href="mailto:vikas12252@gmail.com">
-              <Mail /> Contact
-            </a>
-          </div>
         </header>
 
         <section className="education" id="education">
@@ -153,7 +160,28 @@ const App = () => {
             </div>
           ))}
         </section>
-
+        <h2 className="contact" id="contact">
+          Contact Me
+        </h2>
+        <section className="socials" id="contact">
+          <a
+            href="https://github.com/vikas8561"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github /> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/vikas-kumar-2304a92a3/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin /> LinkedIn
+          </a>
+          <a href="mailto:vikas12252@gmail.com">
+            <Mail /> Contact
+          </a>
+        </section>
         <footer>
           <p>© {new Date().getFullYear()} Vikas Kumar. All rights reserved.</p>
         </footer>
